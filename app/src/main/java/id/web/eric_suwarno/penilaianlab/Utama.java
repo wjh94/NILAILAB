@@ -24,6 +24,8 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import id.web.eric_suwarno.penilaianlab.sesi.SesiLogin;
+
 public class Utama extends AppCompatActivity {
 
     private Button btnLogin;
@@ -34,12 +36,15 @@ public class Utama extends AppCompatActivity {
 
     private final String URL_LOGIN = "http://nilai.eric-suwarno.web.id/login_android";
 
+    SesiLogin session;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.utama);
 
         requestQueue = Volley.newRequestQueue(this);
+        session = new SesiLogin(getApplicationContext());
 
         btnLogin = (Button) findViewById(R.id.btnLogin);
         txtUsername = (EditText) findViewById(R.id.txtUsername);
@@ -63,11 +68,23 @@ public class Utama extends AppCompatActivity {
                         request = new StringRequest(Request.Method.POST, URL_LOGIN, new Response.Listener<String>() {
                             @Override
                             public void onResponse(String s) {
-
                                 try {
                                     JSONObject response = new JSONObject(s);
                                     pDialog.dismiss();
-                                    Toast.makeText(Utama.this, response.getString("authorized"), Toast.LENGTH_LONG).show();
+
+                                    if(response.getString("authorized").equals("true")){
+                                        JSONObject userTerdeteksi = response.getJSONObject("user");
+                                        session.createUserLoginSession(userTerdeteksi.getString("username"), userTerdeteksi.getString("nama_aslab"), userTerdeteksi.getString("id_aslab"));
+                                        if(userTerdeteksi.getString("id_aslab").equals("")) {
+
+                                        }
+                                    }else if(response.getString("authorized").equals("false")){
+                                        new AlertDialog.Builder(Utama.this)
+                                                .setMessage("Maaf, nama pengguna dan/atau kata sandi tidak sesuai, silakan coba lagi.")
+                                                .setNeutralButton("Oke.", null)
+                                                .setTitle("Galat!")
+                                                .show();
+                                    }
                                 } catch (JSONException e) {
                                     Toast.makeText(Utama.this, "Telah terjadi kesalahan, silakan ulangi lagi.", Toast.LENGTH_SHORT).show();
                                 }
