@@ -48,43 +48,50 @@ public class Utama extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final ProgressDialog pDialog = ProgressDialog.show(Utama.this, null, "Sedang melakukan verifikasi, silakan tunggu...", true, false);
-
                 username = txtUsername.getText().toString();
                 password = txtPassword.getText().toString();
 
-                try {
-                    request = new StringRequest(Request.Method.POST, URL_LOGIN, new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String s) {
+                if(username.equals("") || password.equals("") || username.isEmpty() || password.isEmpty()) {
+                    new AlertDialog.Builder(Utama.this)
+                            .setMessage("Nama pengguna atau kata sandi tidak terisi, silakan periksa dan ulangi lagi.")
+                            .setTitle("Galat!")
+                            .setNeutralButton("Oke!", null)
+                            .show();
+                } else {
+                    final ProgressDialog pDialog = ProgressDialog.show(Utama.this, null, "Sedang melakukan verifikasi, silakan tunggu...", true, false);
+                    try {
+                        request = new StringRequest(Request.Method.POST, URL_LOGIN, new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String s) {
 
-                            try {
-                                JSONObject response = new JSONObject(s);
-                                pDialog.dismiss();
-                                Toast.makeText(Utama.this, response.getString("authorized"), Toast.LENGTH_LONG).show();
-                            } catch (JSONException e) {
-                                Toast.makeText(Utama.this, "Telah terjadi kesalahan, silakan ulangi lagi.", Toast.LENGTH_SHORT).show();
+                                try {
+                                    JSONObject response = new JSONObject(s);
+                                    pDialog.dismiss();
+                                    Toast.makeText(Utama.this, response.getString("authorized"), Toast.LENGTH_LONG).show();
+                                } catch (JSONException e) {
+                                    Toast.makeText(Utama.this, "Telah terjadi kesalahan, silakan ulangi lagi.", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
-                    }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError volleyError) {
-                            pDialog.dismiss();
-                        }
-                    }) {
-                        @Override
-                        protected Map<String, String> getParams() throws AuthFailureError {
-                            Map<String, String> params = new HashMap<String, String>();
-                            params.put("username", username);
-                            params.put("password", password);
-                            return params;
-                        }
-                    };
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError volleyError) {
+                                pDialog.dismiss();
+                            }
+                        }) {
+                            @Override
+                            protected Map<String, String> getParams() throws AuthFailureError {
+                                Map<String, String> params = new HashMap<String, String>();
+                                params.put("username", username);
+                                params.put("password", password);
+                                return params;
+                            }
+                        };
 
-                    requestQueue.add(request);
-                } catch (Exception e) {
-                    pDialog.dismiss();
-                    Toast.makeText(Utama.this, "Telah terjadi kesalahan, silakan ulangi lagi.", Toast.LENGTH_SHORT).show();
+                        requestQueue.add(request);
+                    } catch (Exception e) {
+                        pDialog.dismiss();
+                        Toast.makeText(Utama.this, "Telah terjadi kesalahan, silakan ulangi lagi.", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
