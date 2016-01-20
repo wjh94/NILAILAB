@@ -6,75 +6,97 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Utama">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Sistem Penilaian Lab"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
-        android:textSize="15pt" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Silakan login terlebih dahulu untuk menggunakan sistem ini."
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal" />
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12.5pt"
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40pt"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="10pt"
-                android:text="Nama pengguna atau Nomor Induk Mahasiswa (NIM)"
-                android:textSize="10pt"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/txtUsername"
-                android:hint="121402000"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="30pt"
-            android:orientation="vertical"
-            android:layout_marginTop="5pt">
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Sistem Penilaian Lab"
+                android:id="@+id/textView"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:textSize="15pt" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="10pt"
-                android:text="Kata sandi"
-                android:textSize="10pt"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Silakan login terlebih dahulu untuk menggunakan sistem ini."
+                android:id="@+id/textView2"
+                android:layout_below="@+id/textView"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal" />
 
-            <EditText
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/txtPassword"
-                android:hint="Kata sandi"
-                android:inputType="textPassword"/>
+                android:layout_height="match_parent"
+                android:layout_below="@+id/textView2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12.5pt"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40pt"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="10pt"
+                        android:text="Nama pengguna atau Nomor Induk Mahasiswa (NIM)"
+                        android:textSize="8pt"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/txtUsername"
+                        android:hint="121402000"
+                        android:inputType="text" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30pt"
+                    android:orientation="vertical"
+                    android:layout_marginTop="5pt">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="10pt"
+                        android:text="Kata sandi"
+                        android:textSize="8pt"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/txtPassword"
+                        android:hint="Kata sandi"
+                        android:inputType="textPassword"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="20pt"
+                    android:text="Login"
+                    android:layout_marginTop="10pt"
+                    android:id="@+id/btnLogin"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>
