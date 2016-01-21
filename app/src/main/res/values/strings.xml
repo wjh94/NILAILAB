@@ -4,6 +4,17 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="bukaDrawer">Buka</string>
-    <string name="tutupDrawer">Tutup</string>
+    <string-array name="menu_aslab">
+        <item>Home</item>
+        <item>Kelas</item>
+        <item>Komponen</item>
+        <item>Aktivitas</item>
+        <item>Penilaian</item>
+        <item>Logout</item>
+    </string-array>
+    <string-array name="aslab_icons">
+
+    </string-array>
+    <string name="title_activity_main">Main</string>
+    <string name="action_settings">Settings</string>
 </resources>
