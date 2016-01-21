@@ -3,6 +3,7 @@ package id.web.eric_suwarno.penilaianlab;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import id.web.eric_suwarno.penilaianlab.aslab.Main;
 import id.web.eric_suwarno.penilaianlab.sesi.SesiLogin;
 
 public class Utama extends AppCompatActivity {
@@ -77,6 +79,11 @@ public class Utama extends AppCompatActivity {
                                         session.createUserLoginSession(userTerdeteksi.getString("username"), userTerdeteksi.getString("nama_aslab"), userTerdeteksi.getString("id_aslab"));
                                         if(userTerdeteksi.getString("id_aslab").equals("")) {
 
+                                        }else{
+                                            Intent i = new Intent(getApplicationContext(), Main.class);
+                                            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                            startActivity(i);
                                         }
                                     }else if(response.getString("authorized").equals("false")){
                                         new AlertDialog.Builder(Utama.this)
