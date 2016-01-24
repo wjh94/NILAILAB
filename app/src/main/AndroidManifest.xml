@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".aslab.Main" >
         </activity>
+        <activity android:name=".aslab.forms.EditKomponen" >
+        </activity>
     </application>
 
 </manifest>

@@ -22,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -52,6 +53,9 @@ public class Utama extends AppCompatActivity {
         txtUsername = (EditText) findViewById(R.id.txtUsername);
         txtPassword = (EditText) findViewById(R.id.txtPassword);
 
+        txtUsername.setText("");
+        txtPassword.setText("");
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +85,9 @@ public class Utama extends AppCompatActivity {
 
                                         }else{
                                             Intent i = new Intent(getApplicationContext(), Main.class);
+                                            i.putExtra("id_aslab", userTerdeteksi.getString("id_aslab"));
+                                            i.putExtra("nama_aslab", userTerdeteksi.getString("nama_aslab"));
+                                            i.putExtra("username", userTerdeteksi.getString("username"));
                                             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                             startActivity(i);

@@ -3,8 +3,229 @@
     android:layout_height="match_parent"
     tools:context="id.web.eric_suwarno.penilaianlab.aslab.menus.Kelas">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Kelas"
+                android:textColor="#000000"
+                android:textSize="20pt"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pilih kelas"
+                android:textColor="#000000"
+                android:layout_marginTop="5pt"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20pt"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:layout_width="120pt"
+                    android:layout_height="match_parent"
+                    android:id="@+id/cbxDaftarKelas_KelasAslab"></Spinner>
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:text="Periksa"
+                    android:id="@+id/btnPeriksaInfoKelas_Aslab"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15pt"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Informasi Kelas"
+                    android:textColor="#000000"
+                    android:gravity="center_horizontal"
+                    android:textSize="15pt"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10pt"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:textColor="#000000"
+                        android:layout_height="match_parent"
+                        android:text="Nama Matakuliah"/>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#000000"
+                        android:id="@+id/lblNamaMatkul_Aslab"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5pt"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:textColor="#000000"
+                        android:text="Kelas / Kom"/>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#000000"
+                        android:id="@+id/lblKomMatkul_Aslab"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5pt"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:textColor="#000000"
+                        android:text="Dosen Pembimbing"/>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#000000"
+                        android:id="@+id/lblNamaDosen_Aslab"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5pt"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:textColor="#000000"
+                        android:text="Kelas / Kom"/>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#000000"
+                        android:id="@+id/lblNamaAslab_Aslab"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5pt"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000"
+                    android:text="Periode"/>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000"
+                    android:id="@+id/lblTglMasukSelesai_Aslab"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5pt"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000"
+                    android:text="Jumlah Mahasiswa"/>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000"
+                    android:id="@+id/lblJlhMhs_Aslab"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5pt"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#000000"
+                    android:text="Daftar Mahasiswa"/>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tblDaftarMhs_Aslab">
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="NIM"
+                            android:textColor="#000000"
+                            android:layout_gravity="center_horizontal"
+                            />
+
+                        <TextView
+                            android:layout_width="260dp"
+                            android:layout_height="wrap_content"
+                            android:text="Nama"
+                            android:textColor="#000000"
+                            android:layout_gravity="center_horizontal"
+                            />
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

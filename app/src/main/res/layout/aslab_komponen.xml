@@ -3,8 +3,84 @@
     android:layout_height="match_parent"
     tools:context="id.web.eric_suwarno.penilaianlab.aslab.menus.Komponen">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="Komponen"
+                android:textSize="15pt"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="5pt"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="Pilih kelas"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:layout_width="120pt"
+                        android:layout_height="wrap_content"
+
+                        android:id="@+id/cbxDaftarKelas_KomponenAslab"></Spinner>
+
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:text="Periksa"
+                        android:id="@+id/btnPeriksaKomponenKelas_Aslab"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10pt"
+                    android:text="Daftar Komponen"
+                    android:textColor="#000000"
+                    android:textSize="15pt"
+                    android:gravity="center_horizontal"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="#000000"
+                    android:textSize="8pt"
+                    android:text="(Silakan klik komponen untuk mengubah detil)"/>
+
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10pt"
+                    android:id="@+id/listKomponenKelas_Aslab"
+                    ></ListView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

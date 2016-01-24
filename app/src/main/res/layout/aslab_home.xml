@@ -3,8 +3,45 @@
     android:layout_height="match_parent"
     tools:context="id.web.eric_suwarno.penilaianlab.aslab.menus.Home">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selamat datang, Asisten Lab!"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="10pt"
+                android:textSize="13.75pt"
+                android:id="@+id/lblJudulHomeAslab"
+                android:layout_alignParentTop="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblJudulHomeAslab"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10pt"
+                android:id="@+id/lblPenjelasan"
+                android:textSize="11pt"
+                android:text="Anda dapat memilih menu yang ingin Anda gunakan di sebelah kiri."/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Silakan geser layar ke kanan untuk membuka menu."
+                android:textSize="10pt"
+                android:gravity="center_horizontal"
+                android:layout_below="@id/lblPenjelasan"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </FrameLayout>
